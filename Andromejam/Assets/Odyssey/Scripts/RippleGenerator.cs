@@ -8,6 +8,8 @@ public class RippleGenerator : MonoBehaviour {
 
     public float rippleGrowingSpeed = 0.2f;
 
+    public float maxRippleSize;
+
     public GameObject rippleEffect;
 
     private float nextRipple;
@@ -28,7 +30,9 @@ public class RippleGenerator : MonoBehaviour {
             var rip = Instantiate(rippleEffect);
             rip.GetComponent<SpriteRenderer>().enabled = GetComponent<SpriteRenderer>().enabled;
             rip.GetComponent<Transform>().position = transform.position;
-            rip.AddComponent<RippleGrower>().growingSpeed = rippleGrowingSpeed;
+            var grower = rip.AddComponent<RippleGrower>();
+            grower.growingSpeed = rippleGrowingSpeed;
+            grower.maxSize = maxRippleSize;
             rip.tag = tag;
             nextRipple = rippleGenerateTime;
         }
