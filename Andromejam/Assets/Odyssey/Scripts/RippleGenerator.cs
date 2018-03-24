@@ -24,7 +24,10 @@ public class RippleGenerator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (rippleEffect == null) return;
+        if (rippleEffect == null)
+        {
+            return;
+        }
 
         nextRipple -= Time.deltaTime;
 

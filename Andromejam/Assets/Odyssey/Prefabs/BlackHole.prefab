@@ -220,7 +220,8 @@ MonoBehaviour:
   rippleGenerateTime: 0.5
   rippleGrowingSpeed: 0.2
   maxRippleSize: 50
-  rippleEffect: {fileID: 0}
+  rippleEffect: {fileID: 1706049748942782, guid: b8f6c19cc94243a45a76dba00b770f24,
+    type: 2}
 --- !u!212 &212953297562474216
 SpriteRenderer:
   m_ObjectHideFlags: 1
