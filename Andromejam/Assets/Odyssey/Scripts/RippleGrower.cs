@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RippleGrower : MonoBehaviour {
 
+    public float growingSpeed;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -11,10 +13,10 @@ public class RippleGrower : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.localScale += (Vector3.one * 0.1f);
+        transform.localScale += (Vector3.one * growingSpeed);
         if(transform.localScale.magnitude > 20)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
 	}
 }

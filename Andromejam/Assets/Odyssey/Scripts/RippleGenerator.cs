@@ -20,15 +20,14 @@ public class RippleGenerator : MonoBehaviour {
         if (rippleEffect == null) return;
 
         nextRipple -= Time.deltaTime;
-        Debug.Log(nextRipple);
 
-        if(nextRipple < 0)
+        if(nextRipple <= 0)
         {
             Debug.Log("New ripple");
             var rip = Instantiate(rippleEffect);
             rip.GetComponent<SpriteRenderer>().enabled = true;
             rip.GetComponent<Transform>().position = transform.position;
-            rip.AddComponent<RippleGrower>();
+            rip.AddComponent<RippleGrower>().growingSpeed = 0.2f;
             nextRipple = rippleGenerateTime;
         }
 		
