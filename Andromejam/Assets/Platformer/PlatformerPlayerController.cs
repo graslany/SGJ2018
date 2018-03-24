@@ -80,13 +80,13 @@ public class PlatformerPlayerController : MonoBehaviour {
 		Rigidbody2D rBody = GetComponent<Rigidbody2D> ();
 		rBody.velocity = new Vector2 (desiredHorizontalSpeed, rBody.velocity.y);
 		if (desiredHorizontalSpeed >= 0) {
-			Vector3 lScale = transform.localPosition;
+			Vector3 lScale = transform.localScale;
 			lScale.x = 1;
-			transform.localPosition = lScale;
+			transform.localScale = lScale;
 		} else {
-			Vector3 lScale = transform.localPosition;
+			Vector3 lScale = transform.localScale;
 			lScale.x = -1;
-			transform.localPosition = lScale;
+			transform.localScale = lScale;
 		}
 	}
 
