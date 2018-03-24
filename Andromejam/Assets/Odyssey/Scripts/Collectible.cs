@@ -6,8 +6,9 @@ public class Collectible : MonoBehaviour {
 
     private bool collectAnimation = false;
 
+    public GameObject CollectibleCounter;
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Spaceship")
             CollidedWithSpaceship();
@@ -41,3 +42,13 @@ public class Collectible : MonoBehaviour {
         collectAnimation = true;
     }
 }
+    private void CollidedWithSpaceship()
+    {
+        Destroy(GetComponent<Rigidbody2D>());
+        Destroy(GetComponent<BoxCollider2D>());
+        GetComponent<ParticleSystem>().Stop();
+        collectAnimation = true;
+        if(CollectibleCounter != null)
+        {
+            CollectibleCounter.GetComponent<CollectorCounter>().Increment();
+        }
