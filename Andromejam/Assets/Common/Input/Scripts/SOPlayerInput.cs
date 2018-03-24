@@ -25,6 +25,13 @@ public class SOPlayerInput : ScriptableObject, IPlayerInput
 	}
 	private ICommand jumpCommand;
 
+	public ICommand DropCommand {
+		get {
+			return dropCommand;
+		}
+	}
+	private ICommand dropCommand;
+
 	protected virtual void OnEnable ()
 	{
 		goLeftCommand = OrCommand.Create (new ICommand[] {
@@ -37,7 +44,13 @@ public class SOPlayerInput : ScriptableObject, IPlayerInput
 		});
 		jumpCommand = OrCommand.Create (new ICommand[] {
 			KeyCommand.Create(KeyCode.UpArrow),
+			KeyCommand.Create(KeyCode.Z),
 			KeyCommand.Create(KeyCode.Space)
+		});
+		dropCommand = OrCommand.Create (new ICommand[] {
+			KeyCommand.Create(KeyCode.DownArrow),
+			KeyCommand.Create(KeyCode.S),
+			KeyCommand.Create(KeyCode.LeftControl)
 		});
 	}
 }

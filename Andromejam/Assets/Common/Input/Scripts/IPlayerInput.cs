@@ -7,4 +7,5 @@ public interface IPlayerInput {
 	ICommand GoLeftCommand { get; }
 	ICommand GoRightCommand { get; }
 	ICommand JumpCommand { get; }
+	ICommand DropCommand { get; }
 }

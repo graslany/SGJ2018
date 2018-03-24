@@ -17,5 +17,7 @@ public class PlayerController : MonoBehaviour {
 	protected virtual void Update () {
 		animator.SetBool ("IsLeftPressed", input.GoLeftCommand.IsActive());
 		animator.SetBool ("IsRightPressed", input.GoRightCommand.IsActive());
+
+		RaycastHit2D hit = Physics2D.BoxCast (transform.position, new Vector2 (2, 0.01f), 0, new Vector2 (0, -1));
 	}
 }
