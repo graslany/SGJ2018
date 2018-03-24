@@ -54,6 +54,9 @@ TagManager:
   - name: Collectibles
     uniqueID: 1569371851
     locked: 0
+  - name: Player
+    uniqueID: 117465793
+    locked: 0
   - name: Spaceship
     uniqueID: 2255214711
     locked: 0
