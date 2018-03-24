@@ -8,11 +8,9 @@ public class Platform : MonoBehaviour {
 
 	private static readonly float deactivationDelay = 1.0f;
 	float? deactivationDate;
-	bool isPlayerInside;
 
 	public void DeactivateUntilPlayerLeaves() {
-		Debug.Log ("Deactivate");
-
+		
 		Collider2D myCollider = GetComponent<Collider2D> ();
 		deactivationDate = Time.time;
 		myCollider.isTrigger = true;
@@ -26,27 +24,11 @@ public class Platform : MonoBehaviour {
 	}
 
 	protected virtual void Update () {
-		if (deactivationDate.HasValue && Time.time > deactivationDate.Value + deactivationDelay && !isPlayerInside)
+		if (deactivationDate.HasValue && Time.time > deactivationDate.Value + deactivationDelay)
 			Reactivate ();
 	}
 
-	protected virtual void OnTriggerEnter(Collider other) {
-		Debug.Log ("Enter");
-		isPlayerInside = true;
-	}
-
-	protected virtual void OnTriggerStay(Collider other) {
-		Debug.Log ("Stay");
-		isPlayerInside = true;
-	}
-
-	protected virtual void OnTriggerExit(Collider other) {
-		isPlayerInside = false;
-		Reactivate ();
-	}
-
 	private void Reactivate() {
-		Debug.Log ("Reactivate");
 
 		Collider2D myCollider = GetComponent<Collider2D> ();
 		deactivationDate = null;
