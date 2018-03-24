@@ -11,6 +11,7 @@ public class Arrival : MonoBehaviour {
 	
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Collided !");
+        GetComponent<ParticleSystem>().Play();
+
     }
 }
