@@ -4,4 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Main menu.unity
+    guid: 733eb9547704899409906be35fcaf2dc
+  - enabled: 1
+    path: Assets/Odyssey.unity
+    guid: 6645fad83d8318d409da740cedfe87cc
+  - enabled: 1
+    path: Assets/Cards Menu.unity
+    guid: e454410349d212d45957d5582cb9fbd5
