@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlatformerPlayerController : MonoBehaviour {
@@ -20,12 +19,8 @@ public class PlatformerPlayerController : MonoBehaviour {
 	[Tooltip("Vitesse maximale du joueur")]
 	public float jumpSpeed = 8;
 
-	private List<Platform> traversedPlatforms;
+
 	private Animator animator;
-
-	protected virtual void Awake() {
-
-	}
 
 	void Start () {
 		animator = GetComponent<Animator> ();
@@ -85,31 +80,10 @@ public class PlatformerPlayerController : MonoBehaviour {
 
 		// Descente
 		if (groundedThisFrame && input.DropCommand.IsRisingEdge()) {
-			Platform[] platformsUnderPlayer = GetPlatformsUnderPlayer (); ground.GetComponent<Platform> ();
-
-			if (platformsUnderPlayer.Length > 0) {
-
+			Platform platformUnderPlayer = ground.GetComponent<Platform> ();
+			if (platformUnderPlayer != null) {
+				platformUnderPlayer.DeactivateUntilPlayerLeaves ();
 			}
 		}
-	}
-
-	private Platform[] GetPlatformsUnderPlayer() {
-		
-		LayerMask mask = LayerMask.GetMask (new string[] { Layers.PlatformsLayerName });
-		ContactFilter2D filter = new ContactFilter2D();
-		filter.layerMask = mask;
-		Collider2D[] colliders = new Collider2D[5];
-		int collCount = Physics2D.OverlapBox (playerFeetPosition.position, new Vector2(playerWidth, 0.1f), 0, filter, colliders);
-		if (collCount > colliders.Length) {
-			colliders = new Collider2D[collCount];
-			collCount = Physics2D.OverlapBox (playerFeetPosition.position, new Vector2(playerWidth, 0.1f), 0, filter, colliders);
-		}
-
-		return colliders.
-			Take(collCount).
-			Select(coll => coll.GetComponent<Platform>()).
-			Where(p => p != null && p.IsActive).
-			ToArray();
-		
 	}
 }

@@ -6,7 +6,7 @@ public class Platform : MonoBehaviour {
 
 	public bool IsActive { get ; private set ; }
 
-	private static readonly float deactivationDelay = 0.25f;
+	private static readonly float deactivationDelay = 1.0f;
 	float? deactivationDate;
 	bool isPlayerInside;
 
@@ -30,17 +30,17 @@ public class Platform : MonoBehaviour {
 			Reactivate ();
 	}
 
-	protected virtual void OnTriggerEnter() {
+	protected virtual void OnTriggerEnter(Collider other) {
 		Debug.Log ("Enter");
 		isPlayerInside = true;
 	}
 
-	protected virtual void OnTriggerStay() {
+	protected virtual void OnTriggerStay(Collider other) {
 		Debug.Log ("Stay");
 		isPlayerInside = true;
 	}
 
-	protected virtual void OnTriggerExit() {
+	protected virtual void OnTriggerExit(Collider other) {
 		isPlayerInside = false;
 		Reactivate ();
 	}
