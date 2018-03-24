@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: ec8de2dd0cfa81147abd731f5e048e3b
-timeCreated: 1521901473
+timeCreated: 1521923152
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -87,13 +87,41 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+      name: spriterun-01_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 11
+        width: 311
+        height: 455
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
       name: spriterun-01_1
       rect:
         serializedVersion: 2
-        x: 2504
-        y: 2448
-        width: 9
-        height: 7
+        x: 453
+        y: 0
+        width: 199
+        height: 480
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: spriterun-01_2
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 30
+        width: 299
+        height: 460
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -104,52 +132,10 @@ TextureImporter:
       name: spriterun-01_3
       rect:
         serializedVersion: 2
-        x: 869
-        y: 1153
-        width: 758
-        height: 1106
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: spriterun-01_4
-      rect:
-        serializedVersion: 2
-        x: 1957
-        y: 1125
-        width: 486
-        height: 1168
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: spriterun-01_5
-      rect:
-        serializedVersion: 2
-        x: 2594
-        y: 1225
-        width: 728
-        height: 1116
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: spriterun-01_6
-      rect:
-        serializedVersion: 2
-        x: 3546
-        y: 1143
-        width: 476
-        height: 1118
+        x: 1103
+        y: 9
+        width: 196
+        height: 458
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
