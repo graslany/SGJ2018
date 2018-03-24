@@ -58,7 +58,8 @@ public class PlatformerPlayerController : MonoBehaviour {
 		
 		animator.SetBool ("MovesHorizontally", desiredHorizontalSpeed != 0);
 
-		if (input.JumpCommand.IsRisingEdge ()) {
+		if (groundedThisFrame && input.JumpCommand.IsRisingEdge ()) {
+			animator.ResetTrigger ("LandingTrigger");
 			animator.SetTrigger ("JumpTrigger");
 		}
 
@@ -69,6 +70,7 @@ public class PlatformerPlayerController : MonoBehaviour {
 
 		if (groundedThisFrame && !wasGroundedLastFrame) {
 			animator.SetTrigger ("LandingTrigger");
+			animator.ResetTrigger ("JumpTrigger");
 		}
 	}
 
@@ -79,11 +81,11 @@ public class PlatformerPlayerController : MonoBehaviour {
 		
 		Rigidbody2D rBody = GetComponent<Rigidbody2D> ();
 		rBody.velocity = new Vector2 (desiredHorizontalSpeed, rBody.velocity.y);
-		if (desiredHorizontalSpeed >= 0) {
+		if (desiredHorizontalSpeed > 0) {
 			Vector3 lScale = transform.localScale;
 			lScale.x = 1;
 			transform.localScale = lScale;
-		} else {
+		} else if (desiredHorizontalSpeed < 0) {
 			Vector3 lScale = transform.localScale;
 			lScale.x = -1;
 			transform.localScale = lScale;
