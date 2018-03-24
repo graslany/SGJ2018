@@ -12,6 +12,7 @@ public class Blackhole_death : MonoBehaviour {
             Destroy(this.gameObject);
         }
     }
+
     // Use this for initialization
     void Start () {
 		
