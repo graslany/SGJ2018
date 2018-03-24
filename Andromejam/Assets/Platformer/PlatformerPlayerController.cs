@@ -16,6 +16,9 @@ public class PlatformerPlayerController : MonoBehaviour {
 	[Tooltip("Vitesse maximale du joueur")]
 	public float maxSpeed = 3;
 
+	[Tooltip("Vitesse maximale du joueur")]
+	public float jumpSpeed = 8;
+
 
 	private Animator animator;
 
@@ -32,16 +35,23 @@ public class PlatformerPlayerController : MonoBehaviour {
 		animator.SetBool ("IsLeftPressed", isGoingLeft);
 		animator.SetBool ("IsRightPressed", isGoingRight);
 
-		// Déplacement
+		// Est-on sur le sol ?
+		LayerMask mask = LayerMask.GetMask (new string[] { Layers.PlatformsLayerName });
+		Collider2D ground = Physics2D.OverlapBox (playerFeetPosition.position, new Vector2(playerWidth, 0.1f), 0, mask);
+		bool groundedThisFrame = (ground != null);
+
+		// Déplacement horizontal
 		float desiredHorizontalSpeed = 0;
 		if (isGoingLeft)
 			desiredHorizontalSpeed = -maxSpeed;
 		else if (isGoingRight)
 			desiredHorizontalSpeed = maxSpeed;
-		GetComponent<Rigidbody2D> ().velocity = new Vector2 (desiredHorizontalSpeed, 0);
+		Rigidbody2D rBody = GetComponent<Rigidbody2D> ();
+		rBody.velocity = new Vector2 (desiredHorizontalSpeed, rBody.velocity.y);
 
-		LayerMask mask = LayerMask.GetMask (new string[] { Layers.PlatformsLayerName });
-		Collider2D ground = Physics2D.OverlapBox (playerFeetPosition.position, new Vector2(playerWidth, 0.1f), 0, mask);
-		bool groundedThisFrame = (ground != null);
+		// Saut
+		if (groundedThisFrame && input.JumpCommand.IsRisingEdge()) {
+			rBody.velocity = new Vector2 (rBody.velocity.x, jumpSpeed);
+		}
 	}
 }
