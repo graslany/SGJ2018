@@ -360,7 +360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rippleGenerateTime: 0.5
   rippleGrowingSpeed: 0.2
-  maxRippleSize: 100
+  maxRippleSize: 20
   rippleEffect: {fileID: 1332642287}
 --- !u!114 &264266083
 MonoBehaviour:
