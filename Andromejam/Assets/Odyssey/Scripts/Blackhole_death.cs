@@ -9,7 +9,7 @@ public class Blackhole_death : MonoBehaviour {
         Debug.Log("Collision on");
         if (collision.gameObject.tag == "Blackhole")
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 
