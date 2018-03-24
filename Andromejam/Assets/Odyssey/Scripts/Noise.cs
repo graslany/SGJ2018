@@ -17,6 +17,7 @@ public class Noise : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (Target == null) return;
         Vector2 position = Target.transform.position;
 
         float x = Random.Range(position.x - PossibleGap.x, position.x + PossibleGap.x);
