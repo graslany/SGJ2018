@@ -28,7 +28,6 @@ public class ProgressiveText : MonoBehaviour {
 	void Start () {
         timePerChar = DisplayTime / TargetText.Length;
         nextCharTimer = timePerChar;
-        Debug.Log(timePerChar);
         text = GetComponent<Text>();
 	}
 
