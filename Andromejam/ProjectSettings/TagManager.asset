@@ -8,6 +8,8 @@ TagManager:
   - Collectible
   - Spaceship
   - Boundary
+  - XRay
+  - NeutronStar
   layers:
   - Default
   - TransparentFX
