@@ -314,7 +314,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 264266077}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.58, y: 3.4, z: -4.493164}
+  m_LocalPosition: {x: 4.58, y: 3.4, z: 0}
   m_LocalScale: {x: 0.29139173, y: 0.29139173, z: 0.29139173}
   m_Children: []
   m_Father: {fileID: 0}
@@ -542,7 +542,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 509285646}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.36, y: 0.307, z: -4.4873047}
+  m_LocalPosition: {x: -0.36, y: 0.307, z: 0}
   m_LocalScale: {x: 0.505771, y: 0.5900188, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -692,8 +692,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1089569917}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 157}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -982,6 +982,7 @@ GameObject:
   - component: {fileID: 1789304353}
   - component: {fileID: 1789304352}
   - component: {fileID: 1789304351}
+  - component: {fileID: 1789304355}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1046,12 +1047,30 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1789304350}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 1, z: -5.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1789304355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1789304350}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8db73fe25502d56478afd7e00ee3991e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FreeSpace:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 10
+    height: 10
+  ToFollow: {fileID: 509285646}
 --- !u!1 &1801057770
 GameObject:
   m_ObjectHideFlags: 0
