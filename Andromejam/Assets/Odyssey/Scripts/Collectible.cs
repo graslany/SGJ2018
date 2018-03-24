@@ -6,7 +6,6 @@ public class Collectible : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collision on");
         if (collision.gameObject.tag == "Spaceship")
         {
             Destroy(this.gameObject);
