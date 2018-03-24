@@ -8,7 +8,6 @@ public class Noise : MonoBehaviour {
     public GameObject Target;
 
     [Tooltip("Niveau alpha de la texture")]
-
     public Vector2 PossibleGap;
 
 	// Use this for initialization
