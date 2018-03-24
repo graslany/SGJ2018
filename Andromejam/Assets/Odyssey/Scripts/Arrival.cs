@@ -11,11 +11,11 @@ public class Arrival : MonoBehaviour {
 	void Start () {
 		
 	}
-	
+
     void OnTriggerEnter2D(Collider2D other)
     {
         GetComponent<ParticleSystem>().Play();
-        if(FinalText != null)
+        if (FinalText != null)
             FinalText.GetComponent<ProgressiveText>().Run();
 
     }

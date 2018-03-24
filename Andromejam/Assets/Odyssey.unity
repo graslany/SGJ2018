@@ -486,10 +486,10 @@ GameObject:
   - component: {fileID: 509285649}
   - component: {fileID: 509285648}
   - component: {fileID: 509285647}
-  - component: {fileID: 509285650}
   - component: {fileID: 509285651}
   - component: {fileID: 509285652}
   - component: {fileID: 509285653}
+  - component: {fileID: 509285650}
   m_Layer: 0
   m_Name: Spaceship
   m_TagString: Spaceship
@@ -551,7 +551,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f2cb17b216e9c5b498eae9fbb6b1aadb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f2cd9863b564d3041af6d5e9e999dd6f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -568,14 +568,14 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 509285646}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.36, y: 0.307, z: 0}
-  m_LocalScale: {x: 0.505771, y: 0.5900188, z: 1}
+  m_LocalPosition: {x: -1.7285, y: -1.5786, z: 0}
+  m_LocalScale: {x: 0.023934968, y: 0.027921889, z: 0.04732373}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &509285650
-BoxCollider2D:
+--- !u!70 &509285650
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -587,18 +587,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.73, y: 2.91}
-    newSize: {x: 1.73, y: 2.91}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.73, y: 2.91}
-  m_EdgeRadius: 0
+  m_Size: {x: 21.03, y: 33.580006}
+  m_Direction: 0
 --- !u!114 &509285651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4753,7 +4743,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1232036762
+  randomSeed: 7019901
   InitialModule:
     serializedVersion: 3
     enabled: 1
