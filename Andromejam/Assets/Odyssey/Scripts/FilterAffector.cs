@@ -7,11 +7,22 @@ public class FilterAffector : MonoBehaviour {
 
     public string TagToFilter;
 
+    public KeyCode binding;
+
 	// Use this for initialization
 	void Start () {
         GetComponent<Button>().onClick.AddListener(ApplyFilter);
 	}
 
+    void Update()
+    {
+        if (binding == KeyCode.None) return;
+
+        if (Input.GetKeyDown(binding))
+        {
+            ApplyFilter();
+        }
+    }
 
     void ApplyFilter()
     {

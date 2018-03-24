@@ -25,7 +25,6 @@ public class RippleGenerator : MonoBehaviour {
 
         if(nextRipple <= 0)
         {
-            Debug.Log("New ripple");
             var rip = Instantiate(rippleEffect);
             rip.GetComponent<SpriteRenderer>().enabled = GetComponent<SpriteRenderer>().enabled;
             rip.GetComponent<Transform>().position = transform.position;
