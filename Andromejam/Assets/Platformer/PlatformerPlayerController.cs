@@ -19,7 +19,8 @@ public class PlatformerPlayerController : MonoBehaviour {
 	[Tooltip("Vitesse maximale du joueur")]
 	public float jumpSpeed = 8;
 
-
+	private static readonly float landingDistance = 1;
+	bool wasGroundedLastFrame = true;
 	private Animator animator;
 
 	void Start () {
@@ -28,28 +29,8 @@ public class PlatformerPlayerController : MonoBehaviour {
 
 	// Update is called once per frame
 	protected virtual void Update () {
-		UpdateAnimation ();
-		UpdateHorizontalMovement ();
-		UpdateVerticalMovement ();
-	}
 
-	/// <summary>
-	/// Met à jour l'animation du joueur.
-	/// </summary>
-	private void UpdateAnimation() {
-		bool isGoingLeft = input.GoLeftCommand.IsActive ();
-		bool isGoingRight = input.GoRightCommand.IsActive ();
-
-		// Animation
-		animator.SetBool ("IsLeftPressed", isGoingLeft);
-		animator.SetBool ("IsRightPressed", isGoingRight);
-	}
-
-	/// <summary>
-	/// Met à jour le déplacement horizontal du joueur.
-	/// </summary>
-	private void UpdateHorizontalMovement() {
-		
+		// Calcul de la vitesse horizontale pour cette frame
 		bool isGoingLeft = input.GoLeftCommand.IsActive ();
 		bool isGoingRight = input.GoRightCommand.IsActive ();
 		float desiredHorizontalSpeed = 0;
@@ -57,20 +38,62 @@ public class PlatformerPlayerController : MonoBehaviour {
 			desiredHorizontalSpeed = -maxSpeed;
 		else if (isGoingRight)
 			desiredHorizontalSpeed = maxSpeed;
+
+		// Est-on sur le sol ?
+		LayerMask mask = LayerMask.GetMask (new string[] { Layers.PlatformsLayerName });
+		Collider2D ground = Physics2D.OverlapBox (playerFeetPosition.position, new Vector2(playerWidth, 0.1f), 0, mask);
+		bool groundedThisFrame = (ground != null);
+
+		UpdateAnimation (desiredHorizontalSpeed, groundedThisFrame);
+		UpdateHorizontalMovement (desiredHorizontalSpeed);
+		UpdateVerticalMovement (groundedThisFrame, ground);
+
+		wasGroundedLastFrame = groundedThisFrame;
+	}
+
+	/// <summary>
+	/// Met à jour l'animation du joueur.
+	/// </summary>
+	private void UpdateAnimation(float desiredHorizontalSpeed, bool groundedThisFrame) {
+		
+		animator.SetBool ("MovesHorizontally", desiredHorizontalSpeed != 0);
+
+		if (input.JumpCommand.IsRisingEdge ()) {
+			animator.SetTrigger ("JumpTrigger");
+		}
+
+		bool isGoingDown = (GetComponent<Rigidbody2D> ().velocity.y < 0);
+		RaycastHit2D hitResult = Physics2D.Raycast (playerFeetPosition.position, -Vector2.up, landingDistance);
+		bool isLanding = (isGoingDown && hitResult.collider != null);
+		animator.SetBool ("GroundClosing", isLanding);
+
+		if (groundedThisFrame && !wasGroundedLastFrame) {
+			animator.SetTrigger ("LandingTrigger");
+		}
+	}
+
+	/// <summary>
+	/// Met à jour le déplacement horizontal du joueur.
+	/// </summary>
+	private void UpdateHorizontalMovement(float desiredHorizontalSpeed) {
+		
 		Rigidbody2D rBody = GetComponent<Rigidbody2D> ();
 		rBody.velocity = new Vector2 (desiredHorizontalSpeed, rBody.velocity.y);
-
+		if (desiredHorizontalSpeed >= 0) {
+			Vector3 lScale = transform.localScale;
+			lScale.x = 1;
+			transform.localScale = lScale;
+		} else {
+			Vector3 lScale = transform.localScale;
+			lScale.x = -1;
+			transform.localScale = lScale;
+		}
 	}
 
 	/// <summary>
 	/// Met à jour le déplacement vertical du joueur.
 	/// </summary>
-	private void UpdateVerticalMovement() {
-		
-		// Est-on sur le sol ?
-		LayerMask mask = LayerMask.GetMask (new string[] { Layers.PlatformsLayerName });
-		Collider2D ground = Physics2D.OverlapBox (playerFeetPosition.position, new Vector2(playerWidth, 0.1f), 0, mask);
-		bool groundedThisFrame = (ground != null);
+	private void UpdateVerticalMovement(bool groundedThisFrame, Collider2D ground) {
 
 		// Saut
 		if (groundedThisFrame && input.JumpCommand.IsRisingEdge()) {
