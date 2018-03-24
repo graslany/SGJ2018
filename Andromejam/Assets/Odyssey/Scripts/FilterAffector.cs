@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class FilterAffector : MonoBehaviour {
 
-    public string TagToFilter;
+    public string[] TagToFilter;
 
     public KeyCode binding;
 
@@ -26,12 +26,15 @@ public class FilterAffector : MonoBehaviour {
 
     void ApplyFilter()
     {
-        GameObject[] allObjects = GameObject.FindGameObjectsWithTag(TagToFilter);
-        
-        foreach(GameObject o in allObjects)
+        foreach(string tag in TagToFilter)
         {
-            var renderer = o.GetComponent<SpriteRenderer>();
-            renderer.enabled = !renderer.enabled;
+            GameObject[] allObjects = GameObject.FindGameObjectsWithTag(tag);
+
+            foreach (GameObject o in allObjects)
+            {
+                var renderer = o.GetComponent<SpriteRenderer>();
+                renderer.enabled = !renderer.enabled;
+            }
         }
     }
 }

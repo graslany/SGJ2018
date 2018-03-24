@@ -8215,7 +8215,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075fca2b7dc94344ea61654b647b3266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TagToFilter: XRay
+  TagToFilter:
+  - NeutronStar
+  - XRay
   binding: 258
 --- !u!114 &1739656637
 MonoBehaviour:
@@ -8573,7 +8575,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075fca2b7dc94344ea61654b647b3266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TagToFilter: Blackhole
+  TagToFilter:
+  - Blackhole
   binding: 257
 --- !u!1 &1884308908
 GameObject:
