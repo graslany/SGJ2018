@@ -6,13 +6,11 @@ public class InfiniteScroller : MonoBehaviour {
 
     public GameObject Target;
 
-    private Rigidbody2D targetBody;
-
 	// Use this for initialization
 	void Start () {
         float x = GetComponent<SpriteRenderer>().bounds.size.x;
         float y = GetComponent<SpriteRenderer>().bounds.size.y;
-
+            
         GameObject[] neigbours = new GameObject[]
         {
             CreateNeighbour(Vector3.up * y),CreateNeighbour(Vector3.down * y),
@@ -20,20 +18,23 @@ public class InfiniteScroller : MonoBehaviour {
             CreateNeighbour( Vector3.left * x + Vector3.up *y ), CreateNeighbour(Vector3.left * x + Vector3.down * y),
             CreateNeighbour(Vector3.right * x + Vector3.up * y), CreateNeighbour(Vector3.right *x + Vector3.down * y)
         };
+
         foreach (GameObject go in neigbours)
             SetParent(go);
+
 	}
 	
     private GameObject CreateNeighbour(Vector3 increment)
     {
         GameObject neighbour = Instantiate(gameObject);
+        Destroy(neighbour.GetComponent<InfiniteScroller>());//No infinite recursion !
         neighbour.transform.position += increment;
         return neighbour;
     }
 
     private void SetParent(GameObject child)
     {
-        child.transform.parent = transform;
+        child.transform.parent = gameObject.transform;
     }
 
 
@@ -41,9 +42,9 @@ public class InfiniteScroller : MonoBehaviour {
 	void Update () {
         if (Target == null) return;
 
-        var spr = GetComponent<SpriteRenderer>();
+        var spr = GetComponent<SpriteRenderer>().bounds;
 
-        Rect re = new Rect(spr.bounds.center - (spr.bounds.size / 2), spr.bounds.size);
+        Rect re = new Rect(spr.center - (spr.size / 2), spr.size);
         Vector2 pos2d = Target.transform.position;
 
         if (re.Contains(pos2d)) return;
