@@ -7,7 +7,7 @@ public class Killers : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Collision on");
-        if (collision.gameObject.CompareTag("BlackHole") || 
+        if (collision.gameObject.CompareTag("Blackhole") || 
             collision.gameObject.CompareTag("NeutronStar"))
         {
             Destroy(gameObject);

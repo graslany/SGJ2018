@@ -22,11 +22,10 @@ GameObject:
   - component: {fileID: 212953297562474216}
   - component: {fileID: 50639616198935790}
   - component: {fileID: 114723751733702104}
-  - component: {fileID: 61585946513957654}
-  - component: {fileID: 114733378625172194}
   - component: {fileID: 114759497574037314}
   - component: {fileID: 114392764268214130}
   - component: {fileID: 82151378137829134}
+  - component: {fileID: 70642073575579794}
   m_Layer: 0
   m_Name: BlackHole
   m_TagString: Blackhole
@@ -41,8 +40,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1307772265616788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.58, y: 3.4, z: 0}
-  m_LocalScale: {x: 0.29139173, y: 0.29139173, z: 0.29139173}
+  m_LocalPosition: {x: 3.328, y: 3.516, z: 0}
+  m_LocalScale: {x: 0.10618933, y: 0.10618933, z: 0.10618933}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -67,8 +66,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61585946513957654
-BoxCollider2D:
+--- !u!70 &70642073575579794
+CapsuleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -79,19 +78,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10, y: 9.73}
-    newSize: {x: 4, y: 4}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 4, y: 4}
-  m_EdgeRadius: 0
+  m_Offset: {x: -0.5519923, y: -0.06530109}
+  m_Size: {x: 20.232714, y: 15.224783}
+  m_Direction: 1
 --- !u!82 &82151378137829134
 AudioSource:
   m_ObjectHideFlags: 1
@@ -195,17 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06bcc2bd9c7091641be9afb7b5ce2ec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114733378625172194
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1307772265616788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06bcc2bd9c7091641be9afb7b5ce2ec5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  RotationAngle: 45
 --- !u!114 &114759497574037314
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -256,7 +235,7 @@ SpriteRenderer:
   m_SortingLayerID: 1569371851
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fe2b056b8c07a4b47824d1168452c757, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3cbdc3876459408449819db7c8cf7648, type: 3}
   m_Color: {r: 0.15581745, g: 0.695952, b: 0.9632353, a: 1}
   m_FlipX: 0
   m_FlipY: 0
