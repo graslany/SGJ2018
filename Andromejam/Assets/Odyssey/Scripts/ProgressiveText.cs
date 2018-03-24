@@ -47,7 +47,7 @@ public class ProgressiveText : MonoBehaviour {
             nextCharTimer = timePerChar;
             currentText += TargetText[currentText.Length];
             text.text = currentText;
-            running = currentText != TargetText;
+            running = currentText.Length != TargetText.Length;
         }
 	}
 

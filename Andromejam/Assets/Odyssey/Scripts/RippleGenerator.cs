@@ -14,9 +14,12 @@ public class RippleGenerator : MonoBehaviour {
 
     private float nextRipple;
 
+    private SpriteRenderer mRenderer;
+
 	// Use this for initialization
 	void Start () {
         nextRipple = rippleGenerateTime;
+        mRenderer = GetComponent<SpriteRenderer>();
 	}
 	
 	// Update is called once per frame
@@ -28,7 +31,11 @@ public class RippleGenerator : MonoBehaviour {
         if(nextRipple <= 0)
         {
             var rip = Instantiate(rippleEffect);
-            rip.GetComponent<SpriteRenderer>().enabled = GetComponent<SpriteRenderer>().enabled;
+
+            var renderer = rip.GetComponent<SpriteRenderer>();
+            renderer.enabled = mRenderer.enabled;
+            renderer.sortingLayerName = mRenderer.sortingLayerName;
+
             rip.GetComponent<Transform>().position = transform.position;
             var grower = rip.AddComponent<RippleGrower>();
             grower.growingSpeed = rippleGrowingSpeed;
