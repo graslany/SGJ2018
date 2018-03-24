@@ -1,0 +1,104 @@
+﻿
+Event_1 : Au démarrage du niveau, le Berger se réveille après un astronomiquement long sommeil, et remarque que qqchose ne va pas avec Andromède.
+Il décide d'aller utiliser son téléscope qui est dehors.
+ - Lance la musique de fond "de base"
+ - Affiche le texte "  "
+
+
+Event_2 : Lorsque le Berger arrive devant la zone à rayon X (sans avoir le détecteur).
+ - Affiche le texte : "  "
+ - Fait faire demi-tour au Berger
+
+ 
+Event_3 : Lorsque le Berger ramasse un collectible (point bleu)
+ - Le collectible est disparait + son pick_up
+ - Affiche le texte "Carte ramassée : <nom de la carte>" + choix "Lire maintenant"/"Lire plus tard"
+ - Si "Lire maintenant" : Affiche la carte maintenant puis revient au jeu qd le joueur ferme la carte. Sinon revient au jeu
+
+
+Event_4 : Lorsque le Berger arrive au téléscope
+ - Affiche l'image <image de ce qu'il voit>
+ - Affiche le texte : "  "
+ - Allume le bouton A (derrière le téléscope)
+
+
+Event_5 : Lorsque le Berger arrive sur le bouton A (derrière le téléscope)
+ - Déploie le "pont-levis" (hors-champs ?) + son
+ - (Eteint le bouton A)
+ 
+
+Event_6 : Lorsque le Berger arrive au radiotéléscope
+ - Affiche le texte : "  "
+
+ 
+Event_7 : Lorsque le Berger ramasse le mini-radiotelescope (à côté du grand radio-téléscope)
+ - Le mini-radiotelescope disparait + son pick_up
+ - Affiche le texte : "« Nettement plus facile à mettre dans la poche ! »"
+
+ 
+Event_8 : Lorsque le Berger ramasse le capteur UV (celui dans la grotte en haut à droite)
+ - Le capteur UV disparait + son pick_up
+ - Ouvre les écoutilles + son
+ 
+
+Event_9 : Lorsque le Berger ramasse le capteur IR (dans le tunnel)
+ - Le capteur IR disparait + son pick_up
+
+
+Event_10 : Lorsque le Berger ramasse le capteur X (dans le tunnel)
+ - Le capteur UV disparait + son pick_up
+ - Désactive l'Event_2 (demi-tour devant la zone X)
+
+
+Event_11 : Lorsque le Berger arrive dans la zone X
+ - Affiche le texte : "Capteur de rayons X activé !"
+ - Active les pièges à rayons X et leur visuel
+ - Filtre visuel ?
+ - Ajoute la musique de danger à la musique de fond
+ 
+
+Event_12 : Le Berger rentre en contact avec un piège à rayons X
+ - Animation "mort"/disparition/... + son défaite
+ - Téléporte le Berger au début de la zone
+ 
+
+Event_13 : Lorsque le Berger arrive à la fin de la zone X
+ - Désactive les pièges à rayons X et leur visuel
+ - Désactive le filtre visuel éventuel
+ - Enlève la musique de danger à la musique de fond
+ 
+
+Event_14 : Lorsque le Berger ramasse le capteur Gamma (dans le tunnel)
+ - Le capteur Gamma disparait + son pick_up
+ 
+
+Event_15 : Lorsque le Berger collecte le dernier capteur (onde gravitationnelles)
+ - Le capteur gravitationnel disparait + son pick_up
+ - Affiche le texte : "<j'ai tous les capteurs, reste à ouvrir le hangar>"
+ - Active les boutons de l'énigme
+ - Ajoute la musique de fin à la musique de fond
+
+ 
+Event_16 : "Enigme" [version rapide, juste un bouton à activer]
+Il y a 4 boutons qui ne peuvent que être éteints ou allumés. Ils commencent tous éteints
+ - Activer le bouton 1 inverse les états du bouton 1
+ - Activer le bouton 2 inverse les états des boutons 2 et 3
+ - Activer le bouton 3 inverse les états des boutons 1 et 3
+ - Activer le bouton 4 inverse les états des boutons 1, 2 et 4
+(La solution est d'activer les boutons 1, 3 et 4 seulement)
+ 
+
+Event_17 : Lorsque les 4 boutons de l'énigme sont allumés
+ - La caméra se centre sur le vaisseau
+ - Le Joueur ne contrôle plus le Berger
+ - (Le Berger se dirige vers le vaisseau (et disparait quand il le touche))
+ - Animation des portes de hangar
+ - Animation du départ du vaisseau
+ - Fin de la scène.
+
+
+
+
+
+
+
