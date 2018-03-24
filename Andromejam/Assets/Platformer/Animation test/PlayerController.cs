@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestInputController : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
+
+	public SOPlayerInput input;
 
 	private Animator animator;
 
@@ -13,7 +15,7 @@ public class TestInputController : MonoBehaviour {
 	
 	// Update is called once per frame
 	protected virtual void Update () {
-		animator.SetBool ("IsLeftPressed", Input.GetKey(KeyCode.LeftArrow));
-		animator.SetBool ("IsRightPressed", Input.GetKey(KeyCode.RightArrow));
+		animator.SetBool ("IsLeftPressed", input.GoLeftCommand.IsActive());
+		animator.SetBool ("IsRightPressed", input.GoRightCommand.IsActive());
 	}
 }
