@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Blackhole
+  - Collectible
+  - Spaceship
   layers:
   - Default
   - TransparentFX
