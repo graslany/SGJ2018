@@ -360,6 +360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rippleGenerateTime: 0.5
   rippleGrowingSpeed: 0.2
+  maxRippleSize: 100
   rippleEffect: {fileID: 1332642287}
 --- !u!114 &264266083
 MonoBehaviour:
@@ -919,12 +920,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: growingSpeed
-      value: 0.02
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 0}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b8f6c19cc94243a45a76dba00b770f24, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1332642287 stripped
