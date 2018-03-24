@@ -28,6 +28,7 @@ public class RippleGenerator : MonoBehaviour {
             rip.GetComponent<SpriteRenderer>().enabled = true;
             rip.GetComponent<Transform>().position = transform.position;
             rip.AddComponent<RippleGrower>().growingSpeed = 0.2f;
+            rip.tag = tag;
             nextRipple = rippleGenerateTime;
         }
 		
