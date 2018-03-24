@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour {
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private bool collectAnimation = false;
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Collision on");
         if (collision.gameObject.tag == "Spaceship")
-        {
-            Destroy(this.gameObject);
-        }
+            CollidedWithSpaceship();
     }
 
     // Use this for initialization
@@ -22,6 +22,22 @@ public class Collectible : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if (!collectAnimation) return;
+        transform.Rotate(Vector3.forward * 50 * Time.deltaTime);
+        transform.localScale -= Vector3.one * Time.deltaTime;
 
+        if(transform.localScale.x <= 0)
+        {
+            Destroy(gameObject);
+        }
+        
+    }
+
+    private void CollidedWithSpaceship()
+    {
+        Destroy(GetComponent<Rigidbody2D>());
+        Destroy(GetComponent<BoxCollider2D>());
+        GetComponent<ParticleSystem>().Stop();
+        collectAnimation = true;
     }
 }

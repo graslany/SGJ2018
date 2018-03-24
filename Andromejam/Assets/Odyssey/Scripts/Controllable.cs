@@ -24,8 +24,11 @@ public class Controllable : MonoBehaviour {
         if (Input.GetKey("up"))
         {
             body.AddRelativeForce(Vector2.up * thrust);
+            GetComponent<Animator>().SetBool("IsBoosting", true);
         }
-
-
+        else
+        {
+            GetComponent<Animator>().SetBool("IsBoosting", false);
+        }
     }
 }

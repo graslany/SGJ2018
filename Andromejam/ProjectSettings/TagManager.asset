@@ -7,6 +7,7 @@ TagManager:
   - Blackhole
   - Collectible
   - Spaceship
+  - Boundary
   layers:
   - Default
   - TransparentFX
@@ -43,4 +44,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3887493797
+    locked: 0
+  - name: Parallax
+    uniqueID: 2004055733
+    locked: 0
+  - name: Collectibles
+    uniqueID: 1569371851
+    locked: 0
+  - name: Spaceship
+    uniqueID: 2255214711
+    locked: 0
+  - name: UI
+    uniqueID: 3258635837
     locked: 0
