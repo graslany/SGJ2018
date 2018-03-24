@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spaceship : MonoBehaviour {
+public class MainMenu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
