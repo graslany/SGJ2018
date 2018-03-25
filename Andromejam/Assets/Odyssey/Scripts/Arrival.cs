@@ -7,6 +7,11 @@ public class Arrival : MonoBehaviour {
     [Tooltip("Text to display when finished")]
     public GameObject FinalText;
 
+    [Tooltip("Button to use to go to the menu")]
+    public GameObject MenuButton;
+
+    public string WinningText;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -14,9 +19,11 @@ public class Arrival : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        GetComponent<ParticleSystem>().Play();
         if (FinalText != null)
-            FinalText.GetComponent<ProgressiveText>().Run();
+            FinalText.GetComponent<ProgressiveText>().ShowText(WinningText, 1, () =>
+            {
+                MenuButton.GetComponentInChildren<ProgressiveText>().ShowText("> Menu", 0.2f);
+            });
 
     }
 }
