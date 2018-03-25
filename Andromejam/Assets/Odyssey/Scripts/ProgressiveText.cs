@@ -35,6 +35,15 @@ public class ProgressiveText : MonoBehaviour {
     {
         running = StartOnAwake;
     }
+
+    public void ShowText(string text, float apearDuration)
+    {
+        TargetText = text;
+        currentText = "";
+        timePerChar = apearDuration / text.Length;
+        nextCharTimer = timePerChar;
+        running = true;
+    }
 	
 	// Update is called once per frame
 	void Update () {

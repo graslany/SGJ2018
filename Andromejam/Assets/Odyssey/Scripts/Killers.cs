@@ -6,6 +6,8 @@ public class Killers : MonoBehaviour {
 
     //Todo : replace with more compelx structure to give information at death
     public string[] KillerTags;
+
+    public string DefaultDeathMessage = "Tu es mort";
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -14,6 +16,10 @@ public class Killers : MonoBehaviour {
             if (collision.gameObject.CompareTag(kt))
             {
                 Destroy(gameObject);
+                DeathMessage dm = collision.gameObject.GetComponent<DeathMessage>();
+                string msg = dm == null ? DefaultDeathMessage : dm.message;
+
+                FindObjectOfType<ProgressiveText>().ShowText(msg, 1);
                 return;
             }
         }
