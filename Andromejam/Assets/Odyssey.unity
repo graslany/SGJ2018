@@ -211,7 +211,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ec991c7357909524781c6cce83d9a21a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c9751aac1bdb2e04a87e2b9358f4ef8e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1237,7 +1237,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FinalText: {fileID: 1981296835}
   MenuButton: {fileID: 776333146}
-  IsNetActive: 0
   WinningText: "Bravo ! Tu as trouv\xE9 le bon nuage"
 --- !u!1 &1148256338
 GameObject:
