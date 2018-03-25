@@ -26,7 +26,10 @@ public class PlatformerPlayerController : MonoBehaviour {
 	[Tooltip("Bruitage du joueur qui marche sur du métal/en intérieur")]
 	public AudioClip footstepsOnMetal;
 
-	private static readonly float landingDistance = 1;
+    [Tooltip("Composant qui joue le son de saut")]
+    public AudioSource jumpSoundPlayer;
+
+    private static readonly float landingDistance = 1;
 	bool wasGroundedLastFrame = true;
 	private Animator animator;
 
@@ -102,7 +105,13 @@ public class PlatformerPlayerController : MonoBehaviour {
 				audioPlayer.Play ();
 		} else
 			audioPlayer.Stop ();
-	}
+        
+        if (groundedThisFrame && input.JumpCommand.IsRisingEdge())
+        {
+            if (jumpSoundPlayer!=null)
+                jumpSoundPlayer.Play();
+        }
+    }
 
 	/// <summary>
 	/// Met à jour le déplacement horizontal du joueur.
