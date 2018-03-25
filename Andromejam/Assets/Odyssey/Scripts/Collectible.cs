@@ -40,15 +40,10 @@ public class Collectible : MonoBehaviour {
         Destroy(GetComponent<BoxCollider2D>());
         GetComponent<ParticleSystem>().Stop();
         collectAnimation = true;
-    }
-}
-    private void CollidedWithSpaceship()
-    {
-        Destroy(GetComponent<Rigidbody2D>());
-        Destroy(GetComponent<BoxCollider2D>());
-        GetComponent<ParticleSystem>().Stop();
-        collectAnimation = true;
-        if(CollectibleCounter != null)
+        if (CollectibleCounter != null)
         {
             CollectibleCounter.GetComponent<CollectorCounter>().Increment();
         }
+    }
+}
+

@@ -8,7 +8,6 @@ public class Noise : MonoBehaviour {
     public GameObject Target;
 
     [Tooltip("Niveau alpha de la texture")]
-
     public Vector2 PossibleGap;
 
 	// Use this for initialization
@@ -17,6 +16,7 @@ public class Noise : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (Target == null) return;
         Vector2 position = Target.transform.position;
 
         float x = Random.Range(position.x - PossibleGap.x, position.x + PossibleGap.x);
