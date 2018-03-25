@@ -14,7 +14,6 @@ public class RetryButton : MonoBehaviour {
 	
 	public void ResetGame()
     {
-        Debug.Log("Reset!");
         DataHolder.GetComponent<OdysseyData>().Reset();
     }
 

@@ -338,6 +338,7 @@ GameObject:
   - component: {fileID: 776333150}
   - component: {fileID: 776333149}
   - component: {fileID: 776333148}
+  - component: {fileID: 776333151}
   m_Layer: 5
   m_Name: MenuButton
   m_TagString: Untagged
@@ -398,7 +399,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 776333149}
   m_OnClick:
     m_PersistentCalls:
@@ -438,6 +439,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 776333146}
+--- !u!114 &776333151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 776333146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ece51bdeb35fa1e47879722227544225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &834514729
 GameObject:
   m_ObjectHideFlags: 0
@@ -4520,7 +4532,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1191772245}
   m_OnClick:
     m_PersistentCalls:
