@@ -21,7 +21,7 @@ public class Killers : MonoBehaviour {
         {
             if (collision.gameObject.CompareTag(kt))
             {
-                Destroy(gameObject);
+                gameObject.SetActive(false);
                 DeathMessage dm = collision.gameObject.GetComponent<DeathMessage>();
                 string msg = dm == null ? DefaultDeathMessage : dm.message;
 
