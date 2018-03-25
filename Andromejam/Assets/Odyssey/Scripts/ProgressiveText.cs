@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,7 @@ public class ProgressiveText : MonoBehaviour {
     public bool StartOnAwake = true;
 
     private string currentText = "";
+
     private float timePerChar;
 
     private float nextCharTimer;
@@ -23,6 +25,8 @@ public class ProgressiveText : MonoBehaviour {
     private Text text;
 
     private bool running;
+
+    private Action onFinished;
 
 	// Use this for initialization
 	void Start () {
@@ -36,12 +40,13 @@ public class ProgressiveText : MonoBehaviour {
         running = StartOnAwake;
     }
 
-    public void ShowText(string text, float apearDuration)
+    public void ShowText(string text, float apearDuration, Action finishCallback = null)
     {
         TargetText = text;
         currentText = "";
         timePerChar = apearDuration / text.Length;
         nextCharTimer = timePerChar;
+        onFinished = finishCallback;
         running = true;
     }
 	
@@ -56,6 +61,12 @@ public class ProgressiveText : MonoBehaviour {
             currentText += TargetText[currentText.Length];
             text.text = currentText;
             running = currentText.Length != TargetText.Length;
+
+            if (!running && onFinished != null)
+            {
+                Debug.Log("on finished");
+                onFinished();
+            }
         }
 	}
 
