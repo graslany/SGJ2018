@@ -8,6 +8,15 @@ public class Collectible : MonoBehaviour {
 
     private CollectorCounter[] counters;
 
+    private Vector2 originTransform;
+
+    public void Reset()
+    {
+        transform.rotation.Set(0, 0, 0, 0);
+        transform.localScale = originTransform;
+        gameObject.SetActive(true);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Spaceship")
@@ -29,7 +38,7 @@ public class Collectible : MonoBehaviour {
 
         if(transform.localScale.x <= 0)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
         
     }

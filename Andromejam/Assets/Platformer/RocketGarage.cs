@@ -9,6 +9,12 @@ public class RocketGarage : MonoBehaviour {
 	public Transform upperDoor;
 	public Transform lowerDoor;
 
+	private bool launchendRocket;
+
+	private static readonly float doorsOpeningDelay = 4.0f;
+	private static readonly float takingOffDelay = 4.0f;
+	private static readonly float doorsOpeningSpeed = 2.5f;
+
 	protected virtual void OnTriggerEnter2D (Collider2D other) {
 		PlatformerPlayerController player = other.GetComponentInChildren<PlatformerPlayerController> ();
 		if (player == null) {
@@ -22,6 +28,7 @@ public class RocketGarage : MonoBehaviour {
 	}
 
 	private IEnumerator RocketCoroutine (PlatformerPlayerController player) {
+		
 		// camera
 		CameraTarget camControl = player.GetComponentInChildren<CameraTarget>();
 		if (camControl != null)
@@ -36,18 +43,23 @@ public class RocketGarage : MonoBehaviour {
 
 		// Ouverture des portes
 		float startTime = Time.time;
-		while (Time.time < startTime + 6) {
-			float moveSpeed = 1.5f;
+		while (true) {
+			float moveSpeed = doorsOpeningSpeed;
 			upperDoor.localPosition += Vector3.up * Time.deltaTime * moveSpeed;
 			lowerDoor.localPosition -= Vector3.up * Time.deltaTime * moveSpeed;
+
+			// Lancement de la fusée
+			if (Time.time >= startTime + doorsOpeningDelay && !launchendRocket) {
+				launchendRocket = true;
+				rocket.Fire ();
+			}
+
+			// Tempo + changement de niveau
+			if (Time.time >= startTime + doorsOpeningDelay + takingOffDelay) {
+				SceneManager.LoadScene ("Odyssey");
+			}
+
 			yield return null;
 		}
-
-		// Lancement de la fusée
-		rocket.Fire ();
-
-		// Tempo + changement de niveau
-		yield return new WaitForSeconds (6);
-		SceneManager.LoadScene ("Odyssey");
 	}
 }

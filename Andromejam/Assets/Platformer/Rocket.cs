@@ -10,7 +10,7 @@ public class Rocket : MonoBehaviour {
 	private static readonly float flamePeriod = 0.5f;
 	private static readonly float flameMinScale = 0.7f;
 
-	private static readonly float acceleration = 0.5f;
+	private static readonly float acceleration = 2.0f;
 	private float speed;
 
 	public void Fire () {
