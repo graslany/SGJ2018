@@ -3,16 +3,14 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Cred : MonoBehaviour
+public class ret : MonoBehaviour
 {
     public void Start()
     {
-        Debug.Log("Start");
-        GetComponent<Button>().onClick.AddListener(GoToCred);
+        GetComponent<Button>().onClick.AddListener(GoToJouer);
     }
-    public void GoToCred()
+    public void GoToJouer()
     {
-        Debug.Log("Lo");
         SceneManager.LoadScene("Credits");
     }
 }
