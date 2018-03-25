@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class Killers : MonoBehaviour {
 
+    //Todo : replace with more compelx structure to give information at death
+    public string[] KillerTags;
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collision on");
-        if (collision.gameObject.CompareTag("Blackhole") || 
-            collision.gameObject.CompareTag("NeutronStar"))
+        foreach(string kt in KillerTags)
         {
-            Destroy(gameObject);
+            if (collision.gameObject.CompareTag(kt))
+            {
+                Destroy(gameObject);
+                return;
+            }
         }
     }
 

@@ -233,6 +233,7 @@ GameObject:
   - component: {fileID: 298352071}
   - component: {fileID: 298352072}
   - component: {fileID: 298352073}
+  - component: {fileID: 298352074}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -295,6 +296,20 @@ MonoBehaviour:
   ToSpawn: {fileID: 1922306859652128, guid: 277f13be502138d46a2ee0c8c78bc029, type: 2}
   SpawnRadius: 20
   NumberOf: 5
+--- !u!114 &298352074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 298352069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ca84a796639c0145861b5786b64f3cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ToSpawn: {fileID: 1432382226895246, guid: 5a703ca8ddde4e746b1fb28b476c19f5, type: 2}
+  SpawnRadius: 20
+  NumberOf: 2
 --- !u!1 &834514729
 GameObject:
   m_ObjectHideFlags: 0
@@ -4046,6 +4061,48 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1001 &1050301219
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4412794904959230, guid: 5a703ca8ddde4e746b1fb28b476c19f5, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412794904959230, guid: 5a703ca8ddde4e746b1fb28b476c19f5, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412794904959230, guid: 5a703ca8ddde4e746b1fb28b476c19f5, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412794904959230, guid: 5a703ca8ddde4e746b1fb28b476c19f5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412794904959230, guid: 5a703ca8ddde4e746b1fb28b476c19f5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412794904959230, guid: 5a703ca8ddde4e746b1fb28b476c19f5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412794904959230, guid: 5a703ca8ddde4e746b1fb28b476c19f5, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412794904959230, guid: 5a703ca8ddde4e746b1fb28b476c19f5, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 5a703ca8ddde4e746b1fb28b476c19f5, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1089569917
 GameObject:
   m_ObjectHideFlags: 0
@@ -4298,6 +4355,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6763672a6df13704181059889518f7cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KillerTags:
+  - Blackhole
+  - NeutronStar
 --- !u!1 &1225559089
 GameObject:
   m_ObjectHideFlags: 0
@@ -4683,6 +4743,7 @@ MonoBehaviour:
   TagToFilter:
   - NeutronStar
   - XRay
+  - Plasma
   binding: 258
 --- !u!114 &1739656637
 MonoBehaviour:
