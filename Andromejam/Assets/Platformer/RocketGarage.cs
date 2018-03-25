@@ -22,6 +22,7 @@ public class RocketGarage : MonoBehaviour {
 	}
 
 	private IEnumerator RocketCoroutine (PlatformerPlayerController player) {
+		
 		// camera
 		CameraTarget camControl = player.GetComponentInChildren<CameraTarget>();
 		if (camControl != null)
