@@ -11,6 +11,6 @@ public class Loadscene : MonoBehaviour
     }
     public void GoToJouer()
     {
-        SceneManager.LoadScene("Odyssey");
+        SceneManager.LoadScene("Platformer/Animation test/Animation test");
     }
 }
