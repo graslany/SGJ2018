@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(AudioSource))]
 public class PlatformerPlayerController : MonoBehaviour {
 
 	public SOPlayerInput input;
@@ -18,6 +19,12 @@ public class PlatformerPlayerController : MonoBehaviour {
 
 	[Tooltip("Vitesse maximale du joueur")]
 	public float jumpSpeed = 8;
+
+	[Tooltip("Bruitage du joueur qui marche")]
+	public AudioClip footsteps;
+
+	[Tooltip("Bruitage du joueur qui marche sur du métal/en intérieur")]
+	public AudioClip footstepsOnMetal;
 
 	private static readonly float landingDistance = 1;
 	bool wasGroundedLastFrame = true;
@@ -45,6 +52,7 @@ public class PlatformerPlayerController : MonoBehaviour {
 		bool groundedThisFrame = (ground != null);
 
 		UpdateAnimation (desiredHorizontalSpeed, groundedThisFrame);
+		UpdateSounds (groundedThisFrame, ground, desiredHorizontalSpeed);
 		UpdateHorizontalMovement (desiredHorizontalSpeed);
 		UpdateVerticalMovement (groundedThisFrame, ground);
 
@@ -67,11 +75,33 @@ public class PlatformerPlayerController : MonoBehaviour {
 		RaycastHit2D hitResult = Physics2D.Raycast (playerFeetPosition.position, -Vector2.up, landingDistance);
 		bool isLanding = (isGoingDown && hitResult.collider != null);
 		animator.SetBool ("GroundClosing", isLanding);
+		if (hitResult.collider != null) {
+			// Debug.Log ("altitude is " + hitResult.distance + ", ground object is " + hitResult.collider.gameObject.name);
+		}
 
 		if (groundedThisFrame && !wasGroundedLastFrame) {
 			animator.SetTrigger ("LandingTrigger");
 			animator.ResetTrigger ("JumpTrigger");
 		}
+	}
+
+	private void UpdateSounds(bool groundedThisFrame, Collider2D ground, float desiredHorizontalSpeed) {
+		AudioSource audioPlayer = GetComponent<AudioSource> ();
+		if (groundedThisFrame && desiredHorizontalSpeed != 0) {
+			
+			// Déterminons si le joueur est à l'exétrieur ou à l'ntérieur
+			bool isInside = (ground != null && ground.tag == Tags.InsideTag);
+
+			// Mise à jour du player
+			if (isInside) {
+				audioPlayer.clip = footsteps;
+			} else {
+				audioPlayer.clip = footstepsOnMetal;
+			}
+			if (!audioPlayer.isPlaying)
+				audioPlayer.Play ();
+		} else
+			audioPlayer.Stop ();
 	}
 
 	/// <summary>
