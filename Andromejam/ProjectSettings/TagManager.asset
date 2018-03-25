@@ -13,6 +13,7 @@ TagManager:
   - Score
   - Plasma
   - Cloud
+  - Inside
   layers:
   - Default
   - TransparentFX
