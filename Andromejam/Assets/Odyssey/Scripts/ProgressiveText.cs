@@ -44,6 +44,12 @@ public class ProgressiveText : MonoBehaviour {
     {
         currentText = "";
         text.text = currentText;
+
+        Button btn = GetComponentInParent<Button>();
+        if(btn != null)
+        {
+            btn.interactable = false;
+        }
     }
 
     public void ShowText(string text, float apearDuration, Action finishCallback = null)
@@ -54,6 +60,12 @@ public class ProgressiveText : MonoBehaviour {
         nextCharTimer = timePerChar;
         onFinished = finishCallback;
         running = true;
+
+        Button btn = GetComponentInParent<Button>();
+        if(btn != null)
+        {
+            btn.interactable = true;
+        }
     }
 	
 	// Update is called once per frame
