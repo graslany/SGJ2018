@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Arrival : MonoBehaviour {
+    
+    [Tooltip("Texts to display")]
+    public GameObject[] Texts;
 
     [Tooltip("Text to display when finished")]
     public GameObject FinalText;
@@ -52,13 +55,24 @@ public class Arrival : MonoBehaviour {
     {
         if (Won())
         {
-            FinalText.GetComponent<ProgressiveText>().ShowText(WinningText, 1, () =>
+            if (Texts.Length > 0)
             {
-                MenuButton.GetComponentInChildren<ProgressiveText>().ShowText("> Menu", 0.2f);
-            });
+                Texts[0].GetComponent<ProgressiveText>().Run(() =>
+                {
+                    Texts[1].GetComponent<ProgressiveText>().Run(() =>
+                    {
+                        FinalText.GetComponent<ProgressiveText>().ShowText(WinningText, 1, () =>
+                        {
+                            MenuButton.GetComponentInChildren<ProgressiveText>().ShowText("> Menu", 0.2f);
+                        });
+                    });
+                });
+            }
+
         }
 
     }
+
 
     private bool Won()
     {
