@@ -10,17 +10,21 @@ public class Noise : MonoBehaviour {
     [Tooltip("Niveau alpha de la texture")]
     public Vector2 PossibleGap;
 
+    private Vector2 lastPosition;
+
 	// Use this for initialization
 	void Start () {
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Target == null) return;
-        Vector2 position = Target.transform.position;
+        if(Target != null)
+        {
+            lastPosition = Target.transform.position;
+        }
 
-        float x = Random.Range(position.x - PossibleGap.x, position.x + PossibleGap.x);
-        float y = Random.Range(position.y - PossibleGap.y, position.y + PossibleGap.y);
+        float x = Random.Range(lastPosition.x - PossibleGap.x, lastPosition.x + PossibleGap.x);
+        float y = Random.Range(lastPosition.y - PossibleGap.y, lastPosition.y + PossibleGap.y);
 
         transform.position = new Vector3(x, y, 0);
 	}
