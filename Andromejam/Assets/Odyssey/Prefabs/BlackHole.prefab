@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4733613748623832}
   - component: {fileID: 212953297562474216}
   - component: {fileID: 50639616198935790}
-  - component: {fileID: 114723751733702104}
   - component: {fileID: 114759497574037314}
   - component: {fileID: 114392764268214130}
   - component: {fileID: 82151378137829134}
@@ -173,18 +172,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crashSoft: {fileID: 8300000, guid: 0a3ca92d7e97e6b438ff8b7f9faf7acf, type: 3}
---- !u!114 &114723751733702104
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1307772265616788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06bcc2bd9c7091641be9afb7b5ce2ec5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RotationAngle: 45
 --- !u!114 &114759497574037314
 MonoBehaviour:
   m_ObjectHideFlags: 1
