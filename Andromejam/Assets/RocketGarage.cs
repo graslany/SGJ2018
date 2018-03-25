@@ -9,7 +9,8 @@ public class RocketGarage : MonoBehaviour {
 	public Transform upperDoor;
 	public Transform lowerDoor;
 
-	protected virtual void OnTriggerEnter2D (Collider2D other) {
+	protected virtual void OnTriggerEnter2D (Collider2D other)
+    {
 		PlatformerPlayerController player = other.GetComponentInChildren<PlatformerPlayerController> ();
 		if (player == null) {
 			player = other.GetComponentInParent<PlatformerPlayerController> ();
