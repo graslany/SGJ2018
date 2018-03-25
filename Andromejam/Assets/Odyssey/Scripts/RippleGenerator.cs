@@ -36,14 +36,13 @@ public class RippleGenerator : MonoBehaviour {
             var rip = Instantiate(rippleEffect);
 
             var renderer = rip.GetComponent<SpriteRenderer>();
-            renderer.enabled = mRenderer.enabled;
+            renderer.enabled = GameObject.Find("BlackHoleFilter").GetComponent<FilterAffector>().Enabled;
             renderer.sortingLayerName = mRenderer.sortingLayerName;
 
             rip.GetComponent<Transform>().position = transform.position;
             var grower = rip.AddComponent<RippleGrower>();
             grower.growingSpeed = rippleGrowingSpeed;
             grower.maxSize = maxRippleSize;
-            rip.tag = tag;
             nextRipple = rippleGenerateTime;
         }
 		
