@@ -9,6 +9,12 @@ public class FilterAffector : MonoBehaviour {
 
     public KeyCode binding;
 
+    public Sprite EnabledSprite;
+
+    public Sprite DisabledSprite;
+
+    public bool Enabled = true;
+
 	// Use this for initialization
 	void Start () {
         GetComponent<Button>().onClick.AddListener(ToggleFilter);
@@ -26,25 +32,28 @@ public class FilterAffector : MonoBehaviour {
 
     void ToggleFilter()
     {
-        foreach(string tag in TagToFilter)
-        {
-            foreach (GameObject o in GameObject.FindGameObjectsWithTag(tag))
-            {
-                var renderer = o.GetComponent<SpriteRenderer>();
-                renderer.enabled = !renderer.enabled;
-            }
-        }
+        Enabled = !Enabled;
+        UpdateTargets();
+        Sprite nwSprite = Enabled ? EnabledSprite : DisabledSprite;
+        GetComponent<Button>().image.sprite = nwSprite;
     }
 
-    public void DisableFilter()
+    private void UpdateTargets()
     {
         foreach (string tag in TagToFilter)
         {
             foreach (GameObject o in GameObject.FindGameObjectsWithTag(tag))
             {
                 var renderer = o.GetComponent<SpriteRenderer>();
-                renderer.enabled = false;
+                renderer.enabled = Enabled;
             }
         }
+    }
+
+    public void DisableFilter()
+    {
+        Enabled = false;
+        UpdateTargets();
+        GetComponent<Button>().image.sprite = DisabledSprite;
     }
 }

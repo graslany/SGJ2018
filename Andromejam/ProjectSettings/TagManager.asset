@@ -12,6 +12,8 @@ TagManager:
   - NeutronStar
   - Score
   - Plasma
+  - Cloud
+  - Inside
   layers:
   - Default
   - TransparentFX
