@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class ret : MonoBehaviour
+public class cardst : MonoBehaviour
 {
     public void Start()
     {
@@ -11,6 +11,6 @@ public class ret : MonoBehaviour
     }
     public void GoToCred()
     {
-        SceneManager.LoadScene("Credits");
+        SceneManager.LoadScene("re");
     }
 }
