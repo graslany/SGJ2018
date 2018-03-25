@@ -14,7 +14,6 @@ public class EntitySpawner : MonoBehaviour {
 	void Start () {
 		for(int i = 0; i < NumberOf; ++i)
         {
-            Debug.Log("Spawning one");
             float xPos = Random.Range(-SpawnRadius, SpawnRadius);
             float yPos = Random.Range(-SpawnRadius, SpawnRadius);
 
