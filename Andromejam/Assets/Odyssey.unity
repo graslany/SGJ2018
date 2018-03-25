@@ -322,6 +322,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee3cc10f6840219478d325ef1459d709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpaceShip: {fileID: 1148256338}
+  texts:
+  - {fileID: 1981296835}
+  - {fileID: 1191772242}
+  - {fileID: 776333146}
 --- !u!1 &776333146
 GameObject:
   m_ObjectHideFlags: 0
@@ -4454,6 +4459,7 @@ GameObject:
   - component: {fileID: 1191772246}
   - component: {fileID: 1191772245}
   - component: {fileID: 1191772244}
+  - component: {fileID: 1191772247}
   m_Layer: 5
   m_Name: RetryButton
   m_TagString: Untagged
@@ -4518,18 +4524,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1191772245}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1191772245
@@ -4565,6 +4560,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1191772242}
+--- !u!114 &1191772247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1191772242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6d89b99a4573e646a6f87a0cadcac9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DataHolder: {fileID: 298352069}
 --- !u!1 &1225559089
 GameObject:
   m_ObjectHideFlags: 0

@@ -40,6 +40,12 @@ public class ProgressiveText : MonoBehaviour {
         running = StartOnAwake;
     }
 
+    public void Clear()
+    {
+        currentText = "";
+        text.text = currentText;
+    }
+
     public void ShowText(string text, float apearDuration, Action finishCallback = null)
     {
         TargetText = text;
