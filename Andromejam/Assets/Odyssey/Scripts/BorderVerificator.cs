@@ -17,7 +17,7 @@ public class BorderVerificator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (MovingZone == null || ToVerify == null || MovingZone.Contains(ToVerify.transform.position)) return;
+        if (ToVerify == null || MovingZone.Contains(ToVerify.transform.position)) return;
 
         Debug.Log("Is outside");
         float objX = ToVerify.transform.position.y;

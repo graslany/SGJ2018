@@ -8,6 +8,10 @@ TagManager:
   - Collectible
   - Spaceship
   - Boundary
+  - XRay
+  - NeutronStar
+  - Score
+  - Plasma
   layers:
   - Default
   - TransparentFX

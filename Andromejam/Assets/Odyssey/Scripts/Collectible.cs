@@ -6,7 +6,7 @@ public class Collectible : MonoBehaviour {
 
     private bool collectAnimation = false;
 
-    public GameObject CollectibleCounter;
+    private CollectorCounter[] counters;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,7 +17,7 @@ public class Collectible : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-
+        counters = FindObjectsOfType<CollectorCounter>();
     }
 
     // Update is called once per frame
@@ -40,9 +40,8 @@ public class Collectible : MonoBehaviour {
         Destroy(GetComponent<BoxCollider2D>());
         GetComponent<ParticleSystem>().Stop();
         collectAnimation = true;
-        if(CollectibleCounter != null)
-        {
-            CollectibleCounter.GetComponent<CollectorCounter>().Increment();
-        }
+        foreach(CollectorCounter cc in counters)
+            cc.Increment();
     }
 }
+

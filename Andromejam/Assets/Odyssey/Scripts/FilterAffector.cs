@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class FilterAffector : MonoBehaviour {
 
-    public string TagToFilter;
+    public string[] TagToFilter;
 
     public KeyCode binding;
 
 	// Use this for initialization
 	void Start () {
-        GetComponent<Button>().onClick.AddListener(ApplyFilter);
+        GetComponent<Button>().onClick.AddListener(ToggleFilter);
 	}
 
     void Update()
@@ -20,18 +20,31 @@ public class FilterAffector : MonoBehaviour {
 
         if (Input.GetKeyDown(binding))
         {
-            ApplyFilter();
+            ToggleFilter();
         }
     }
 
-    void ApplyFilter()
+    void ToggleFilter()
     {
-        GameObject[] allObjects = GameObject.FindGameObjectsWithTag(TagToFilter);
-        
-        foreach(GameObject o in allObjects)
+        foreach(string tag in TagToFilter)
         {
-            var renderer = o.GetComponent<SpriteRenderer>();
-            renderer.enabled = !renderer.enabled;
+            foreach (GameObject o in GameObject.FindGameObjectsWithTag(tag))
+            {
+                var renderer = o.GetComponent<SpriteRenderer>();
+                renderer.enabled = !renderer.enabled;
+            }
+        }
+    }
+
+    public void DisableFilter()
+    {
+        foreach (string tag in TagToFilter)
+        {
+            foreach (GameObject o in GameObject.FindGameObjectsWithTag(tag))
+            {
+                var renderer = o.GetComponent<SpriteRenderer>();
+                renderer.enabled = false;
+            }
         }
     }
 }
