@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50880753021237634}
   - component: {fileID: 58363896383324692}
   - component: {fileID: 114154469742876674}
+  - component: {fileID: 114423583271945722}
   m_Layer: 0
   m_Name: NeutronStar
   m_TagString: NeutronStar
@@ -75,9 +76,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.04100448}
   serializedVersion: 2
-  m_Radius: 12
+  m_Radius: 2.8165421
 --- !u!114 &114154469742876674
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -90,6 +91,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationAngle: 20
+--- !u!114 &114423583271945722
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1698712137741652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d475b3b443b70748ab7396993e99221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: "Ecrabouill\xE9 par une \xE9toile neutron"
 --- !u!212 &212484845419626148
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -124,7 +137,7 @@ SpriteRenderer:
   m_SortingLayerID: 1569371851
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c33b2d6e44a11e145aca2c34687b91ec, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 75a54d0ab99f44841ac2be6db498d4a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
