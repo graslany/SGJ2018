@@ -64,7 +64,6 @@ public class ProgressiveText : MonoBehaviour {
 
             if (!running && onFinished != null)
             {
-                Debug.Log("on finished");
                 onFinished();
             }
         }

@@ -18,6 +18,12 @@ public class CollectorCounter : MonoBehaviour {
 
     private Text target;
 
+    public void Reset()
+    {
+        currentValue = startingValue;
+        UpdateText();
+    }
+
     private void Start()
     {
         target = GetComponent<Text>();
