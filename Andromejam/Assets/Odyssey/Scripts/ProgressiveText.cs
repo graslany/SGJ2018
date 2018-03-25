@@ -26,7 +26,7 @@ public class ProgressiveText : MonoBehaviour {
 
     private bool running;
 
-    private Action onFinished;
+    private Action onFinished = null;
 
 	// Use this for initialization
 	void Start () {
@@ -87,8 +87,13 @@ public class ProgressiveText : MonoBehaviour {
         }
 	}
 
-    public void Run()
+    public void Run(Action callback = null)
     {
         running = true;
+
+        if(callback != null)
+        {
+            onFinished = callback;
+        }
     }
 }
