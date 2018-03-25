@@ -10,6 +10,11 @@ public class OdysseyData : MonoBehaviour {
 
     public GameObject[] texts;
 
+    public void Awake()
+    {
+        cards = new List<GameObject>();
+    }
+
     public void DeclareCard(GameObject card)
     {
         cards.Add(card);
@@ -37,7 +42,6 @@ public class OdysseyData : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        cards = new List<GameObject>();
 	}
 	
 	// Update is called once per frame
