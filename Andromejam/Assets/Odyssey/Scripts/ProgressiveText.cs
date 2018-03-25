@@ -40,6 +40,18 @@ public class ProgressiveText : MonoBehaviour {
         running = StartOnAwake;
     }
 
+    public void Clear()
+    {
+        currentText = "";
+        text.text = currentText;
+
+        Button btn = GetComponentInParent<Button>();
+        if(btn != null)
+        {
+            btn.interactable = false;
+        }
+    }
+
     public void ShowText(string text, float apearDuration, Action finishCallback = null)
     {
         TargetText = text;
@@ -48,6 +60,12 @@ public class ProgressiveText : MonoBehaviour {
         nextCharTimer = timePerChar;
         onFinished = finishCallback;
         running = true;
+
+        Button btn = GetComponentInParent<Button>();
+        if(btn != null)
+        {
+            btn.interactable = true;
+        }
     }
 	
 	// Update is called once per frame
@@ -64,7 +82,6 @@ public class ProgressiveText : MonoBehaviour {
 
             if (!running && onFinished != null)
             {
-                Debug.Log("on finished");
                 onFinished();
             }
         }

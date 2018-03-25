@@ -1,0 +1,82 @@
+Script Berger des Etoiles
+
+	Phase metroidvania - Validé !!
+
+	Eveil : 
+« … J'ai dormi plus longtemps que prévu. »
+Regarde le ciel
+« Bon… La Voie Lactée est toujours là dans un coin du ciel. La fusion n’a pas encore eu lieu. »
+« … »
+« Il y a quelque chose de curieux/bizarre avec Andromède, non ? (Et sa petite sœur M32 ne me semble pas être là où elle le devrait…) »
+« J’ai besoin de mon télescope… Où est-ce que je l’ai mis ? »
+
+	Zone rayon X (avant de récupérer le capteur rayons X) :
+« Hmm… Il y a une fuite de rayons X dans cette zone. Mieux vaut ne pas y aller sans préparation. »
+
+	Télescope :
+« Ah ! Je vois maintenant… Où sont les étoiles du cœur d'Andromède ? Il devrait y en avoir plus… bien plus… Pourquoi en manque-t'il autant ? »
+	« Que s’est-il passé pendant mon sommeil ? »
+
+
+	
+	« Les étoiles ne disparaissent pas comme ça, il doit rester des traces. »
+« Comme des naines blanches, ou des restes de supernova… pourtant je n'en ai pas vues. »
+« Mais bien sûr, il doit rester des nuages de gaz ! C’est là que les étoiles se forment. Sans gaz, pas d’étoiles ! »
+
+	Radiotélescope :
+« Ces radiotélescopes ne sont pas idéals pour observer le gaz mais ils feront l’affaire pour le moment. »
+« Mais que se passe-t-il ? Il en vraiment peu. Comme si les étoiles n’avaient jamais pu se former. Où sont les nuages ? »
+« Ah ! En voilà… mais… mais… ils s’en vont ! Au loin de la galaxie ! Il n’y a rien là bas… »
+« Je dois les rattraper avant qu’ils ne se perdent tous. »
+« Je ferais bien d’emmener un radiotélescope… Comme ça, je pourrais voir lesquels s’éloignent ! »
+
+	Ramasse le miniature :
+« Nettement plus pratique à mettre dans la poche. » « Je dois encore réunir quelques outils. Ils seront d’une aide précieuse. »
+	(« … »
+	« C’est quand même curieux. Pourquoi les nuages se seraient-ils perdus ? »)
+
+	Ramasse les UV :
+« Cela me permettra de voir les ultra-violets. »
+« Ils sont émis par les nuages de gaz ! Ça m’aidera à les trouver ! »
+« Hmm… Il faudra faire attention, les ultra-violets sont aussi émis par les plasmas, et mieux vaut les éviter ceux là ! »
+
+	(Ramasse les IR :
+« Voir les infrarouges pourrait être utile. »)
+
+	X-ray :
+« Détecter les rayons X me permettra d'arriver au hangar et d’éviter les dangers du cosmos. »
+« Les étoiles à neutrons et les plasmas interstellaires abimeraient mon vaisseau ! »
+« … »
+« Et moi avec ! »
+
+	
+
+	(Rayons gamma :
+« Les rayons gamma sont émis par les étoiles. Même si mon vaisseau est équipé pour y résister, ils peuvent être dangereux. »)
+
+	Ondes Grav :
+« Celui là est vraiment grand. Ça ne serait pas raisonnable de l’emmener sur mon vaisseau. »
+« Détecter les ondes gravitationnelles ne serait pas très utile pour ma mission… »
+« Mais cela me permettrait d’éviter de tomber malencontreusement dans un trou noir ! »
+« Bon, allez, je le prends. »
+
+	Chemin du hangar :
+« J’ai tous mes outils, il ne reste plus qu'à ouvrir le hangar ! »
+(« … »
+« Maintenant que j’y pense… ces nuages ne s’éloignent-ils pas dans la direction de M32 ? »
+« Qu’as-tu donc fait M32 ? »)
+
+	Après l’énigme :
+« Peut-être que ma longue nuit m’a porté conseil… mais je me demande bien pourquoi j’ai mis ces boutons là. »
+
+
+=======
+	Départ :
+« Nous y voilà. »
+
+
+
+	Fin du jeu :
+« C’était donc ça… M32 a traversé Andromède et a mis une belle pagaille ! Décidemment, elle ne tient pas en place ! »
+« Heureusement que je suis arrivé à temps pour remettre le gaz en place. Andromède va pouvoir retrouver ses étoiles ! »
+
