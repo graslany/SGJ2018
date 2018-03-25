@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: ec8de2dd0cfa81147abd731f5e048e3b
-timeCreated: 1521923152
+timeCreated: 1521964495
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -91,9 +91,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 11
-        width: 311
-        height: 455
+        y: 0
+        width: 325
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -104,10 +104,10 @@ TextureImporter:
       name: spriterun-01_1
       rect:
         serializedVersion: 2
-        x: 453
+        x: 325
         y: 0
-        width: 199
-        height: 480
+        width: 325
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,10 +118,10 @@ TextureImporter:
       name: spriterun-01_2
       rect:
         serializedVersion: 2
-        x: 705
-        y: 30
-        width: 299
-        height: 460
+        x: 650
+        y: 0
+        width: 325
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,10 +132,10 @@ TextureImporter:
       name: spriterun-01_3
       rect:
         serializedVersion: 2
-        x: 1103
-        y: 9
-        width: 196
-        height: 458
+        x: 975
+        y: 0
+        width: 325
+        height: 500
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

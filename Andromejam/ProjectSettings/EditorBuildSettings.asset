@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Odyssey.unity
     guid: 6645fad83d8318d409da740cedfe87cc
+  - enabled: 0
+    path: 
+    guid: e454410349d212d45957d5582cb9fbd5
   - enabled: 1
     path: Assets/Credits.unity
     guid: 63ee5fab1e6ccf64d98faa8ccebf055d
@@ -17,3 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Cards Menu.unity
     guid: f100a05ade2544a4698ee13978443eb1
+  - enabled: 1
+    path: Assets/Credits2.unity
+    guid: cbd7c4adf949c1043b30cf1d0689cd58
+  - enabled: 1
+    path: Assets/Cards2.unity
+    guid: 37ba6ec7f467f4e479f1b6cb927ad158
